@@ -1,0 +1,26 @@
+Customer Records
+
+Customer ID: 1001
+Name: John Smith
+City: New York
+Purchase: Laptop
+
+Customer ID: 1002
+Name: Emma Johnson
+City: Chicago
+Purchase: Smartphone
+
+Customer ID: 1003
+Name: Michael Brown
+City: Seattle
+Purchase: Headphones
+
+Customer ID: 1004
+Name: Sophia Davis
+City: Dallas
+Purchase: Tablet
+
+Customer ID: 1005 
+Name: Zinab
+City: Boston
+Purchase: Smartwatch

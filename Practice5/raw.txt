@@ -1,0 +1,64 @@
+DUPLICATE
+Branch of EUROPHARMA LLP Astana
+BIN 080841000762
+VAT Series 58002 No. 0014371
+Cash Register 300-190
+Shift 10
+Receipt Sequence No. 61
+Receipt No. 2331180266
+Cashier Pharmacy 17-1
+SALE
+1. Sodium chloride 0.9%, 200 ml, bottle
+   2.000 x 154.00 = 308.00
+2. Boric alcohol 3%, 20 ml, bottle
+   1.000 x 51.00 = 51.00
+3. Syringe 2 ml, 3-comp. (Bioject)
+   2.000 x 16.00 = 32.00
+4. Infusion set Vogt Medical
+   2.000 x 60.00 = 120.00
+5. Syringe 5 ml, 3-comp.
+   1.000 x 310.00 = 310.00
+6. AURA Cotton pads No. 150
+   1.000 x 461.00 = 461.00
+7. Chistaya Liniya soft scrub 50 ml
+   1.000 x 381.00 = 381.00
+8. Chistaya Liniya clarifying apricot scrub 50 ml
+   1.000 x 386.00 = 386.00
+9. Chistaya Liniya soft scrub 50 ml
+   1.000 x 381.00 = 381.00
+10. Nivea 3-in-1 men's shampoo 400 ml
+    1.000 x 414.00 = 414.00
+11. Pro Series Bright Color Shampoo 500 ml
+    1.000 x 841.00 = 841.00
+12. Pro Series color-protecting conditioner for long-lasting care of color-treated hair Bright Color 500 ml
+    1.000 x 841.00 = 841.00
+13. Clear Active Sport 2-in-1 men's shampoo 400 ml
+    1.000 x 1,200.00 = 1,200.00
+14. Bio World (HYDRO THERAPY) Micellar water 5-in-1, 445 ml
+    1.000 x 1,152.00 = 1,152.00
+15. Bio World (HYDRO THERAPY) Hyaluronic acid cleansing gel-mousse 250 ml
+    1.000 x 1,152.00 = 1,152.00
+16. [RX]-Sodium chloride 0.9%, 100 ml, bottle
+    1.000 x 168.00 = 168.00
+17. [RX]-Disol solution 400 ml, bottle
+    1.000 x 163.00 = 163.00
+18. Tagansorbent with silver ions No. 30, powder
+    1.000 x 1,526.00 = 1,526.00
+19. [RX]-Cerucal 2%, 2 ml, No. 10, ampoules
+    2.000 x 396.00 = 792.00
+20. [RX]-Andazole 200 mg, No. 40, tablets
+    1.000 x 7,330.00 = 7,330.00
+Bank card: 18,009.00
+TOTAL: 18,009.00
+incl. VAT 12%: 0.00
+Fiscal sign: 2331180266
+Time: 18.04.2019 11:13:58
+Nur-Sultan, Kazakhstan, Mangilik El, 19, np-5
+Fiscal data operator: JSC "Kazakhtelecom"
+To verify the receipt, visit: consumer.oofd.kz
+FISCAL RECEIPT
+FP
+OFD INN: 311559
+KKM SGN (RNM) code: 620300145311
+ZNM: SWK00034965
+WEBKASSA.KZ
