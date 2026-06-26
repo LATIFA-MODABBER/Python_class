@@ -1,35 +1,27 @@
 import re
+import os
 
-text1 = "abbb"
-print(bool(re.fullmatch(r"ab*", text1)))
+wrd = str(input("Enter the word: "))
 
-text2 = "abb"
-print(bool(re.fullmatch(r"ab{2,3}", text2)))
+print(re.search(r"^ab*$", wrd))
 
-text3 = "hello_world my_name is Python"
-print(re.findall(r"\b[a-z]+_[a-z]+\b", text3))
+print(re.findall(r"ab{2,3}", wrd))
 
-text4 = "Hello World Python REGEX"
-print(re.findall(r"\b[A-Z][a-z]+\b", text4))
+print(re.findall(r"[a-z]+(_[A-Z]+)*", wrd))
 
-text5 = "a123xyzb"
-print(bool(re.fullmatch(r"a.*b", text5)))
+print(re.findall(r"[A-Z][a-z]+", wrd))
 
-text6 = "Hello, world. Python is fun"
-print(re.sub(r"[ ,.]", ":", text6))
+print(re.findall(r"a.*b$", wrd))
 
-text7 = "my_first_program"
-camel = re.sub(r"_([a-z])", lambda m: m.group(1).upper(), text7)
+print(re.sub(r"[,\. ]", ":", wrd))
+
+parts = wrd.split("_")
+camel = parts[0]+"".join(word.capitalize() for word in parts[1:])
 print(camel)
 
-text8 = "MyFirstProgram"
-parts = [x for x in re.split(r"(?=[A-Z])", text8) if x]
-print(parts)
+print(re.findall(r"[A-Z][a-z]*", wrd))
 
-text9 = "MyFirstProgram"
-spaced = re.sub(r"([A-Z])", r" \1", text9).strip()
-print(spaced)
+print((re.sub(r"([A-Z])", r" \1", wrd)).strip())
 
-text10 = "myFirstProgram"
-snake = re.sub(r"([A-Z])", r"_\1", text10).lower()
-print(snake)
+print((re.sub(r"([A-Z])", r"_\1", wrd)).lower())
+

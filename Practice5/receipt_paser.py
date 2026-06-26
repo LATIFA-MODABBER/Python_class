@@ -1,34 +1,88 @@
 import re
+import json
 
-with open("raw.txt", "r", encoding="utf-8") as file:
-    text = file.read()
 
-receipt_no = re.search(r"Receipt No\.\s*(\d+)", text)
+def parse_receipt(filename):
+    with open(filename, "r", encoding="utf-8") as f:
+        text = f.read()
 
-prices = re.findall(r"=\s*([\d,]+\.\d+)", text)
-prices = [float(price.replace(",", "")) for price in prices]
+    # Extract all prices
 
-total = re.search(r"TOTAL:\s*([\d,]+\.\d+)", text)
+    price_pattern = r"\b\d{1,3}(?:,\d{3})*\.\d{2}\b"
+    prices = re.findall(price_pattern, text)
 
-payment = re.search(r"(Bank card):\s*([\d,]+\.\d+)", text)
+    # Convert prices to floats
+    price_values = [float(price.replace(",", "")) for price in prices]
 
-datetime = re.search(
-    r"(\d{2}\.\d{2}\.\d{4})\s+(\d{2}:\d{2}:\d{2})",
-    text
-)
+    # Extract product names
 
-products = re.findall(
-    r"\d+\.\s(.+?)\n\s+\d+\.\d+\s*x",
-    text
-)
+    product_pattern = re.compile(
+        r'^\d+\.\s*\n?(.+?)\n\s*\d+\s*[x×]',
+        re.MULTILINE
+    )
 
-print("Receipt Number:", receipt_no.group(1))
-print("Date:", datetime.group(1))
-print("Time:", datetime.group(2))
-print("Payment Method:", payment.group(1))
-print("Total:", total.group(1))
-print("Calculated Total:", sum(prices))
+    products = [p.strip() for p in product_pattern.findall(text)]
 
-print("\nProducts:")
-for product in products:
-    print("-", product)
+
+    # Calculate total amount
+
+    total_match = re.search(r"total:\s*([\d,]+\.\d{2})", text, re.IGNORECASE)
+
+    if total_match:
+        total_amount = float(total_match.group(1).replace(",", ""))
+    else:
+        total_amount = None
+
+
+    # Extract date and time
+
+    datetime_pattern = r"(\d{2}\.\d{2}\.\d{4})\s+(\d{2}:\d{2}:\d{2})"
+    datetime_match = re.search(datetime_pattern, text)
+
+    if datetime_match:
+        date = datetime_match.group(1)
+        time = datetime_match.group(2)
+    else:
+        date = None
+        time = None
+
+
+    # Extract payment method
+
+    payment_match = re.search(r"(bank card|cash)", text, re.IGNORECASE)
+
+    if payment_match:
+        payment_method = payment_match.group(1).lower()
+    else:
+        payment_method = None
+
+
+    # Create structured output
+
+    data = {
+        "products": products,
+        "prices": price_values,
+        "total_amount": total_amount,
+        "date": date,
+        "time": time,
+        "payment_method": payment_method
+    }
+
+    return data
+
+
+def main():
+    receipt = parse_receipt("raw.txt")
+
+    print("\nParsed Receipt")
+    print("-" * 40)
+    print(json.dumps(receipt, indent=4, ensure_ascii=False))
+
+    with open("parsed_receipt.json", "w", encoding="utf-8") as f:
+        json.dump(receipt, f, indent=4, ensure_ascii=False)
+
+
+if __name__ == "__main__":
+    main()
+
+
